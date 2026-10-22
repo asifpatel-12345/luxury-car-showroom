@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APEX MOTORS | Ultimate Luxury & Supercar Vault</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts & FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Background Animated Lights -->
+  <div class="bg-glow glow-1"></div>
+  <div class="bg-glow glow-2"></div>
+
+  <!-- Header / Navigation Bar -->
+  <header class="navbar">
+    <div class="logo">
+      <i class="fa-solid fa-gauge-high logo-icon"></i>
+      <span>APEX<span class="gold-text">MOTORS</span></span>
+    </div>
+    <nav>
+      <a href="#hero" class="nav-link active">Home</a>
+      <a href="#showroom" class="nav-link">Showroom</a>
+      <a href="#features" class="nav-link">VIP Services</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="btn-book-test" onclick="scrollToShowroom()">
+        <i class="fa-solid fa-key"></i> Book Test Drive
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section">
+    <div class="hero-content">
+      <span class="badge"><i class="fa-solid fa-crown"></i> Premier Luxury Hypercars</span>
+      <h1>Drive The <span class="gold-text">Extraordinary</span></h1>
+      <p>Experience unmatched speed, elegance, and engineering perfection. Explore our handpicked collection of world-class supercars and hypercars.</p>
+      <div class="hero-btns">
+        <a href="#showroom" class="btn-primary"><i class="fa-solid fa-car"></i> Explore Vault</a>
+        <a href="#contact" class="btn-secondary"><i class="fa-solid fa-phone"></i> VIP Concierge</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-box">
+          <h3>10+</h3>
+          <p>Iconic Supercars</p>
+        </div>
+        <div class="stat-box">
+          <h3>100%</h3>
+          <p>Verified Authenticity</p>
+        </div>
+        <div class="stat-box">
+          <h3>24/7</h3>
+          <p>VIP Assistance</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Showroom Section -->
+  <section id="showroom" class="showroom-section">
+    <div class="section-title">
+      <h2>EXCLUSIONS & <span class="gold-text">SUPERCAR VAULT</span></h2>
+      <p>Filter by brand or search for your dream machine</p>
+    </div>
+
+    <!-- Search & Filter Controls -->
+    <div class="filter-container">
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="searchInput" placeholder="Search Ferrari, Supra, BMW, Lambo...">
+      </div>
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All Hypercars</button>
+        <button class="filter-btn" data-filter="ferrari">Ferrari</button>
+        <button class="filter-btn" data-filter="lamborghini">Lamborghini</button>
+        <button class="filter-btn" data-filter="mercedes">Mercedes</button>
+        <button class="filter-btn" data-filter="bmw">BMW</button>
+        <button class="filter-btn" data-filter="supra">Supra</button>
+        <button class="filter-btn" data-filter="others">More Exotic</button>
+      </div>
+    </div>
+
+    <!-- Dynamic Cars Grid Container -->
+    <div class="cars-grid" id="carsGrid">
+      <!-- Generated via JavaScript -->
+    </div>
+  </section>
+
+  <!-- VIP Services Section -->
+  <section id="features" class="features-section">
+    <div class="section-title">
+      <h2>WHY <span class="gold-text">CHOOSE US</span></h2>
+      <p>World-class experience tailored for luxury enthusiasts</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <i class="fa-solid fa-shield-halved feature-icon"></i>
+        <h3>Certified Guarantee</h3>
+        <p>Every supercar undergoes a rigorous 200-point inspection before listing.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fa-solid fa-truck-fast feature-icon"></i>
+        <h3>Enclosed Delivery</h3>
+        <p>Worldwide door-to-door delivery inside temperature-controlled enclosed trailers.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fa-solid fa-user-ninja feature-icon"></i>
+        <h3>Private Track Days</h3>
+        <p>Exclusive access to private racing circuits for all supercar buyers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Booking Modal / Form Section -->
+  <section id="contact" class="contact-section">
+    <div class="contact-card">
+      <h2>BOOK A <span class="gold-text">PRIVATE VIEWING</span></h2>
+      <p>Schedule a personal tour or test drive with our executive consultants.</p>
+      <form id="bookingForm" onsubmit="handleFormSubmit(event)">
+        <div class="form-group">
+          <input type="text" id="userName" placeholder="Full Name" required>
+          <input type="email" id="userEmail" placeholder="Email Address" required>
+        </div>
+        <div class="form-group">
+          <select id="carSelect" required>
+            <option value="" disabled selected>Select Preferred Car</option>
+            <option value="Ferrari SF90 Stradale">Ferrari SF90 Stradale</option>
+            <option value="Lamborghini Aventador SVJ">Lamborghini Aventador SVJ</option>
+            <option value="Mercedes-AMG GT Black Series">Mercedes-AMG GT Black Series</option>
+            <option value="BMW M4 CSL">BMW M4 CSL</option>
+            <option value="Toyota GR Supra A90">Toyota GR Supra A90</option>
+            <option value="Bugatti Chiron Super Sport">Bugatti Chiron Super Sport</option>
+            <option value="Porsche 911 GT3 RS">Porsche 911 GT3 RS</option>
+            <option value="Aston Martin DBS Superleggera">Aston Martin DBS Superleggera</option>
+            <option value="Rolls-Royce Phantom VIII">Rolls-Royce Phantom VIII</option>
+            <option value="Audi R8 V10 Performance">Audi R8 V10 Performance</option>
+          </select>
+          <input type="date" id="bookingDate" required>
+        </div>
+        <button type="submit" class="btn-submit"><i class="fa-solid fa-paper-plane"></i> Confirm VIP Reservation</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Car Quick Detail Modal -->
+  <div id="carModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 APEX MOTORS Luxury Showroom. Built for High-Performance Performance.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
